@@ -1,0 +1,68 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title The Coder
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .wrapper
+      .sidebar{"data-color" => "blue", "data-image" => "images/sidebar-5.jpg"}
+        .sidebar-wrapper
+          .logo
+            %a.simple-text{:href => "http://www.billynicartjr.com"}
+              Billy Nicart Jr
+          %ul.nav
+            %li{:class => active_class(dashboard_index_path)}
+              = link_to dashboard_index_path do
+                %i.pe-7s-graph
+                %p Dashboard
+            %li{:class => active_class(user_index_path)}
+              = link_to user_index_path do
+                %i.pe-7s-user
+                %p User Details
+            %li{:class => active_class(usana_index_path)}
+              = link_to usana_index_path do
+                %i.pe-7s-science
+                %p Usana
+            %li{:class => active_class(calendar_index_path)}
+              = link_to calendar_index_path do
+                %i.pe-7s-date
+                %p Calendar
+            %li{:class => active_class(til_index_path)}
+              = link_to til_index_path do
+                %i.pe-7s-note
+                %p TIL
+      .main-panel
+        %nav.navbar.navbar-default.navbar-fixed
+          .container-fluid
+            .navbar-header
+              %button.navbar-toggle{"data-target" => "#navigation-example-2", "data-toggle" => "collapse", :type => "button"}
+                %span.sr-only Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              %a.navbar-brand{:href => "/"}
+                = active_controller
+            .collapse.navbar-collapse
+              %ul.nav.navbar-nav.navbar-left
+                %li
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    %p.hidden-lg.hidden-md
+                      = active_controller
+              %ul.nav.navbar-nav.navbar-right
+                %li
+                  %a{:href => "#"}
+                    %p Log out
+                %li.separator.hidden-lg.hidden-md
+        .content
+          .container-fluid
+            .row
+              .col-sm-12
+                = yield
+        %footer.footer
+          .container-fluid
+            %p.copyright.pull-right
+              Copyright ©
+              =DateTime.now.strftime("%Y")
