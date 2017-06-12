@@ -1,0 +1,27 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: thecoder_development
+  pool: 30
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: thecoder_test
+  pool: 5
+  timeout: 5000
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: thecoder
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: thecoder
+  pool: 5
+  timeout: 5000
