@@ -19,10 +19,14 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
-gem "awesome_print", require:"ap"
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
+gem 'awesome_print', require:'ap'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'pry'
 end
 
 group :development do

@@ -1,16 +1,15 @@
 @import 'font-awesome';
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "fullcalendar";
 
-@import "animate.min";
-@import "light-bootstrap-dashboard";
-@import "pe-icon-7-stroke";
-
-
-@import "dashboard";
+@import "plugins/*";
+@import "pages/*";
 
 
-
+/*
+  Custom application-wide styling here
+*/
 .sidebar {
   background-image: image-url("sidebar-5.jpg")
 }

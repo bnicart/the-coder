@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index]
   resources :user, only: [:index]
   resources :usana, only: [:index]
-  resources :calendar, only: [:index]
+  resources :calendar
   resources :til , only: [:index]
 
 end
