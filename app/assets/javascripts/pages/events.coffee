@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-class @Calendar
+class @Events
   self = this
 
   self.calendar_options =
@@ -11,8 +11,8 @@ class @Calendar
       $("#new-event-modal").modal("show")
 
   @init: ->
-    $(document).on "turbolinks:load", ->
-      $('#calendar').fullCalendar(self.calendar_options) if $('#calendar').length
+    $('#calendar').fullCalendar(self.calendar_options) if $('#calendar').length
 
 $ ->
-  Calendar.init()
+$(document).on "ready turbolinks:load", (e) ->
+  Events.init()
