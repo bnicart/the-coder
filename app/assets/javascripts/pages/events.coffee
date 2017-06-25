@@ -6,6 +6,9 @@ class @Events
   self = this
 
   self.calendar_options =
+    startParam: 'start_time'
+    endParam: 'end_time'
+    events: '/events.json'
     dayClick: (date, jsEvent, view) ->
       $("[name='new-event-date']").val(date.format('MM/DD/YYYY'))
       $("#new-event-modal").modal("show")
