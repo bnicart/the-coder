@@ -1,12 +1,13 @@
-#new-event-modal.modal.fade{"aria-labelledby" => "New Event", :role => "dialog", :tabindex => "-1"}
+#edit-event-modal.modal.fade{"aria-labelledby" => "New Event", :role => "dialog", :tabindex => "-1"}
   .modal-dialog.modal-sm{:role => "document"}
     .modal-content
       .modal-header
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"} ×
         %h4.modal-title
-          New Event
+          Event
       .modal-body
+        %input{:type => "hidden", :name => "event_id"}
         .form-group
           %label Start Date
           %input.form-control.date{:placeholder => "Start Date", :type => "text", :name => "start_time"}/
@@ -21,4 +22,5 @@
           %textarea.form-control{:placeholder => "Describe your event", :type => "text", :name => "description"}
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-        %button.btn.btn-primary.new-event-save{:type => "button", "data-url" => events_path, "data-method" => "POST"} Save
+        %button.btn.btn-danger.delete-event{:type => "button", "data-url" => events_path, "data-method" => "DELETE"} Delete
+        %button.btn.btn-primary.edit-event-save{:type => "button", "data-url" => events_path, "data-method" => "PATCH"} Save

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -21,6 +22,7 @@ gem 'font-awesome-rails'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'rails-assets-datetimepicker'
 
 gem 'awesome_print', require:'ap'
 
