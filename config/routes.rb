@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
   resources :user, only: [:index]
-  resources :usana, only: [:index]
+  resources :usana do
+    collection do
+      get 'products'
+    end
+  end
   resources :events
   resources :til , only: [:index]
 
