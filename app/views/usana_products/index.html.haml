@@ -1,0 +1,26 @@
+.card
+  .header
+    %h4.title
+      Usana Products
+      .btn.btn-sm.btn-info.add-product-button Add
+    %p.category List of all the products for Usana PH
+  .content.table-responsive.table-full-width
+    %table.table.table-hover.table-striped
+      %thead
+        %th Item Code
+        %th Name
+        %th Quantity
+        %th Distributor Price
+        %th Customer Price (SRP)
+        %th Description
+      %tbody
+        - @products.each do |product|
+          %tr
+            %td= product.item_code
+            %td= product.name
+            %td= product.quantity
+            %td= number_with_delimiter(product.distributor_price)
+            %td= number_with_delimiter(product.customer_price)
+            %td= product.description
+
+= render 'modals/new_product_modal'
