@@ -1,2 +1,0 @@
-class UsanaController < ApplicationController
-end
