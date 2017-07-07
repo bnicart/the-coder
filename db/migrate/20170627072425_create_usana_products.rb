@@ -14,7 +14,7 @@ class CreateUsanaProducts < ActiveRecord::Migration[5.0]
       t.text :trivia
       t.text :who_can_benefit
       t.text :additional_info
-
+      t.string :fda_link
       t.timestamps
     end
   end
