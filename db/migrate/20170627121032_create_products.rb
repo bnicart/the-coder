@@ -3,8 +3,8 @@ class CreateProducts < ActiveRecord::Migration[5.0]
     create_table :products do |t|
       t.string :name
       t.integer :points
-      t.decimal :dist_price
-      t.decimal :cust_price
+      t.decimal :distributor_price
+      t.decimal :customer_price
       t.string :quantity
       t.string :image
       t.string :supplement_facts

@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20170627121032) do
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "points"
-    t.decimal  "dist_price"
-    t.decimal  "cust_price"
+    t.decimal  "distributor_price"
+    t.decimal  "customer_price"
     t.string   "quantity"
     t.string   "image"
     t.string   "supplement_facts"
