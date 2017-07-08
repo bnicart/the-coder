@@ -2,25 +2,37 @@
   .header
     %h4.title
       Usana Products
-      .btn.btn-sm.btn-info.add-product-button Add
+      - if valid_user?
+        .btn.btn-sm.btn-info.add-product-button Add
     %p.category List of all the products for Usana PH
   .content.table-responsive.table-full-width
-    %table.table.table-hover.table-striped
+    %table.table.table-hover.table-striped#product-table
       %thead
-        %th Item Code
-        %th Name
-        %th Quantity
-        %th Distributor Price
-        %th Customer Price (SRP)
-        %th Description
+        %th.product_item_code Item Code
+        %th.product_name Name
+        %th.product_quantity Quantity
+        %th.product_distributor_price Distributor Price
+        %th.product_customer_price Customer Price (SRP)
+        %th.product_description Short Description
+        - if valid_user?
+          %th Actions
       %tbody
-        - @products.each do |product|
+        - if @products.count == 0
+          %tr
+            %td.text-center{:colspan => 7} No product(s) to show
+        - @products.order(id: :asc).each do |product|
           %tr
             %td= product.item_code
             %td= product.name
             %td= product.quantity
             %td= number_with_delimiter(product.distributor_price)
             %td= number_with_delimiter(product.customer_price)
-            %td= product.description
+            %td= product.short_description
+            - if valid_user?
+              %td
+                - product_data = product.to_json
+                %button.btn.btn-xs.btn-warning.product-edit{:type => "button", "data-product" => product_data} Edit
+                %button.btn.btn-xs.btn-danger.product-delete{:type => "button", "data-product-id" => product.id, "data-url" => products_path, "data-method" => "DELETE"} Delete
 
 = render 'modals/new_product_modal'
+= render 'modals/edit_product_modal'

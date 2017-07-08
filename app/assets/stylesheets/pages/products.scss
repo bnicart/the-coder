@@ -1,0 +1,15 @@
+#product-table {
+  table-layout: fixed;
+
+  td {
+    white-space: initial;
+    word-wrap: break-word
+  }
+}
+
+.product_item_code { width: 10% }
+.product_name { width: 10% }
+.product_quantity { width: 10% }
+.product_distributor_price { width: 15% }
+.product_customer_price { width: 15% }
+.product_description { width: 30% }

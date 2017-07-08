@@ -19,3 +19,19 @@
 //= require moment
 //= require fullcalendar
 //= require_tree .
+
+
+function showNotification(type = '', message = '', from = 'bottom', align = 'left') {
+
+  $.notify({
+    icon: "pe-7s-attention",
+    message: message
+  }, {
+    type: type,
+    timer: 3000,
+    placement: {
+      from: from,
+      align: align
+    }
+  });
+}
