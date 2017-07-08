@@ -15,6 +15,8 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.text :who_can_benefit
       t.text :additional_info
       t.string :fda_link
+      t.string :item_code
+      t.string :type
       t.timestamps
     end
   end

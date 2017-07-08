@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628001155) do
+ActiveRecord::Schema.define(version: 20170627121032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,29 +39,10 @@ ActiveRecord::Schema.define(version: 20170628001155) do
     t.text     "who_can_benefit"
     t.text     "additional_info"
     t.string   "fda_link"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "type"
-  end
-
-  create_table "usana_products", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "points"
-    t.decimal  "distributor_price"
-    t.decimal  "customer_price"
-    t.string   "quantity"
-    t.string   "image"
-    t.string   "supplement_facts"
-    t.text     "description"
-    t.string   "short_description"
-    t.string   "how_to_use"
-    t.text     "trivia"
-    t.text     "who_can_benefit"
-    t.text     "additional_info"
-    t.string   "fda_link"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
     t.string   "item_code"
+    t.string   "type"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
 end

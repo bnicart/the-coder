@@ -1,62 +1,63 @@
 #new-product-modal.modal.fade{"aria-labelledby" => "New Product", :role => "dialog", :tabindex => "-1"}
   .modal-dialog.modal-md{:role => "document"}
     .modal-content
-      .modal-header
-        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-          %span{"aria-hidden" => "true"} ×
-        %h4.modal-title
-          New Product
-      .modal-body
-        .row
-          .col-sm-12.form-group
-            %label Name
-            %input.form-control{:placeholder => "Name", :type => "text", :name => "name"}/
-        .row
-          .col-sm-12.form-group
-            %label Image
-            %input.form-control{:placeholder => "Image", :type => "text", :name => "image"}/
-        .row
-          .col-sm-4.form-group
-            %label Points
-            %input.form-control{:placeholder => "Points", :type => "number", :name => "points"}/
-          .col-sm-4.form-group
-            %label Distributor Price
-            %input.form-control{:placeholder => "Distributor price", :type => "number", :name => "distributor_price"}/
-          .col-sm-4.form-group
-            %label Customer Price
-            %input.form-control{:placeholder => "Customer price", :type => "number", :name => "customer_price"}/
-        .row
-          .col-sm-12.form-group
-            %label Quantity
-            %input.form-control{:placeholder => "Quantity", :type => "text", :name => "quantity"}/
-        .row
-          .col-sm-12.form-group
-            %label Short Description
-            %input.form-control{:placeholder => "Short Description", :type => "text", :name => "short_description"}/
-        .row
-          .col-sm-12.form-group
-            %label Description
-            %textarea.form-control{:placeholder => "Description", :type => "text", :name => "description"}
-        .row
-          .col-sm-12.form-group
-            %label Supplement Facts
-            %textarea.form-control{:placeholder => "Supplement Facts", :type => "text", :name => "supplement_facts"}
-        .row
-          .col-sm-12.form-group
-            %label How To Use
-            %textarea.form-control{:placeholder => "How To Use", :type => "text", :name => "how_to_use"}
-        .row
-          .col-sm-12.form-group
-            %label Trivia
-            %textarea.form-control{:placeholder => "trivia", :type => "text", :name => "trivia"}
-        .row
-          .col-sm-12.form-group
-            %label Who Can Benefit
-            %textarea.form-control{:placeholder => "Who Can Benefit", :type => "text", :name => "who_can_benefit"}
-        .row
-          .col-sm-12.form-group
-            %label Additional Info
-            %textarea.form-control{:placeholder => "Additional Info", :type => "text", :name => "additional_info"}
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-        %button.btn.btn-primary.new-product-save{:type => "button", "data-url" => usana_products_path, "data-method" => "POST"} Save
+      %form#newProductForm{:name => "new-product-form"}
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4.modal-title
+            New Product
+        .modal-body
+          .row
+            .col-sm-12.form-group
+              %label Name *
+              %input.form-control{:placeholder => "Name", :type => "text", :name => "name", :required => true}/
+          .row
+            .col-sm-12.form-group
+              %label Image
+              %input.form-control{:placeholder => "Image", :type => "text", :name => "image"}/
+          .row
+            .col-sm-4.form-group
+              %label Points *
+              %input.form-control{:placeholder => "Points", :type => "number", :name => "points", :required => true}/
+            .col-sm-4.form-group
+              %label Distributor Price *
+              %input.form-control{:placeholder => "Distributor price", :type => "number", :name => "distributor_price", :required => true}/
+            .col-sm-4.form-group
+              %label Customer Price *
+              %input.form-control{:placeholder => "Customer price", :type => "number", :name => "customer_price", :required => true}/
+          .row
+            .col-sm-12.form-group
+              %label Quantity *
+              %input.form-control{:placeholder => "Quantity", :type => "text", :name => "quantity", :required => true}/
+          .row
+            .col-sm-12.form-group
+              %label Short Description
+              %input.form-control{:placeholder => "Short Description", :type => "text", :name => "short_description"}/
+          .row
+            .col-sm-12.form-group
+              %label Description
+              %textarea.form-control{:placeholder => "Description", :type => "text", :name => "description"}
+          .row
+            .col-sm-12.form-group
+              %label Supplement Facts
+              %textarea.form-control{:placeholder => "Supplement Facts", :type => "text", :name => "supplement_facts"}
+          .row
+            .col-sm-12.form-group
+              %label How To Use
+              %textarea.form-control{:placeholder => "How To Use", :type => "text", :name => "how_to_use"}
+          .row
+            .col-sm-12.form-group
+              %label Trivia
+              %textarea.form-control{:placeholder => "trivia", :type => "text", :name => "trivia"}
+          .row
+            .col-sm-12.form-group
+              %label Who Can Benefit
+              %textarea.form-control{:placeholder => "Who Can Benefit", :type => "text", :name => "who_can_benefit"}
+          .row
+            .col-sm-12.form-group
+              %label Additional Info
+              %textarea.form-control{:placeholder => "Additional Info", :type => "text", :name => "additional_info"}
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+          %button.btn.btn-primary.new-product-save{:type => "button", "data-url" => products_path, "data-method" => "POST"} Save

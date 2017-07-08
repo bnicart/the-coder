@@ -23,6 +23,7 @@ gem 'font-awesome-rails'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'rails-assets-datetimepicker'
+gem 'rails-assets-jquery-validate'
 
 gem 'awesome_print', require:'ap'
 
