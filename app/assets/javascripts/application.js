@@ -21,7 +21,7 @@
 //= require_tree .
 
 
-function showNotification(type = '', message = '', from = 'bottom', align = 'left') {
+function showNotification(type = "", message = "", from = "bottom", align = "left") {
 
   $.notify({
     icon: "pe-7s-attention",
