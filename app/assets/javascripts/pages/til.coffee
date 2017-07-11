@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+class @Tils
+  self = this
+  @init: ->
+    $('.til-edit').on 'click', ->
+      console.log $(this).data('til')
+$ ->
+$(document).on "ready turbolinks:load", (e) ->
+  Tils.init()

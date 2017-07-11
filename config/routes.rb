@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :user, only: [:index]
   resources :products, only: [:index, :create, :update, :destroy]
   resources :events
-  resources :til , only: [:index]
+  resources :til
 
 end

@@ -1,1 +1,29 @@
-What I've learned from day-to-day will be here 
+.card
+  .header
+    %h4.title Today I learned...
+  .content
+    = form_for :til do |f|
+      .row
+        .col-sm-12.form-group
+          = f.text_field :description, class: "form-control", placeholder: "What did you learned today?", required: true
+          = f.submit value: "Submit", class: "btn btn-success btn-sm hidden", "data-disable-with" =>"Saving..."
+  .content.table-responsive.table-full-width
+    %table.table.table-hover.table-striped#til-table
+      %thead
+        %th Date
+        %th My Learnings
+        %th Actions
+      %tbody
+        - if @tils.count == 0
+          %tr
+            %td.text-center{:colspan => 7} No learnings yet to show
+        - @tils.order(id: :asc).each do |til|
+          %tr
+            %td
+              = format_date(til.created_at)
+            %td
+              = til.description
+            %td
+              - til_data = til.to_json
+              %button.btn.btn-xs.btn-warning.til-edit{:type => "button", "data-til" => til_data} Edit
+              %button.btn.btn-xs.btn-danger.til-delete{:type => "button", "data-til-id" => til.id, "data-url" => til_index_path, "data-method" => "DELETE"} Delete
