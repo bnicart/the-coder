@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
   resources :user, only: [:index]
-  resources :products, only: [:index, :create, :update, :destroy]
+  resources :products
   resources :events
   resources :til
 
