@@ -18,6 +18,7 @@
 //= require bootstrap
 //= require moment
 //= require fullcalendar
+//= require ckeditor-jquery
 //= require_tree .
 
 
@@ -35,3 +36,9 @@ function showNotification(type = "", message = "", from = "bottom", align = "lef
     }
   });
 }
+
+// $(document).on("ready turbolinks:load", function(e) {
+  $('.ckeditor').ckeditor({
+    // optional config
+  });
+// });

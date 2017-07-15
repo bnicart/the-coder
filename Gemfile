@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
+gem 'ckeditor_rails', '~> 4.6.2'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
