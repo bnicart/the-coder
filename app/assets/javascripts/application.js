@@ -23,7 +23,6 @@
 
 
 function showNotification(type = "", message = "", from = "bottom", align = "left") {
-
   $.notify({
     icon: "pe-7s-attention",
     message: message
@@ -37,8 +36,4 @@ function showNotification(type = "", message = "", from = "bottom", align = "lef
   });
 }
 
-// $(document).on("ready turbolinks:load", function(e) {
-  $('.ckeditor').ckeditor({
-    // optional config
-  });
-// });
+$('.ckeditor').ckeditor();

@@ -2,11 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+input[type="submit"] {
+  margin-top: 15px;
+}
 
 .learnings {
   .details {
     border: 1px solid;
     margin-bottom: 5px;
   }
+}
+
+.til-actions {
+  vertical-align: top !important;
 }

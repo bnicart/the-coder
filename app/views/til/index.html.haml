@@ -5,8 +5,9 @@
     = form_for :til do |f|
       .row
         .col-sm-12.form-group
-          = f.text_field :description, class: "form-control", placeholder: "What did you learned today?", required: true
-          = f.submit value: "Submit", class: "btn btn-success btn-sm hidden", "data-disable-with" =>"Saving..."
+          = f.hidden_field :id
+          = f.text_area :description, :class => 'form-control ckeditor', placeholder: "What did you learned today?", required: true
+          = f.submit value: "Submit", class: "btn btn-success btn-sm", "data-disable-with" =>"Saving..."
   .content.table-responsive.table-full-width
     %table.table.table-hover.table-striped#til-table
       %thead
@@ -22,8 +23,9 @@
             %td
               = format_date(til.created_at)
             %td
-              = til.description
-            %td
+              - description = til.description.html_safe
+              = description
+            %td.til-actions
               - til_data = til.to_json
               %button.btn.btn-xs.btn-warning.til-edit{:type => "button", "data-til" => til_data} Edit
               %button.btn.btn-xs.btn-danger.til-delete{:type => "button", "data-til-id" => til.id, "data-url" => til_index_path, "data-method" => "DELETE"} Delete
